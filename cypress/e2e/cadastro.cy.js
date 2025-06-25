@@ -42,15 +42,15 @@ describe('Tela de cadastro', () => {
     });
 
     it('Deve dar erro ao tentar cadastrar sem email', () => {
-            let nome = `usuario${faker.person.firstName()}`
-            let senha = `${faker.internet.password()}`
-            inicioPage.selecionarAba('Account')
-            loginPage.acessarCriarConta()
-            cadastroPage.realizarCadastro(nome, faker.person.lastName(), faker.phone.number(), ' ', senha, senha)
-            cy.get('[data-testid="warning"] > .r-jwli3a').should('contain', 'Please enter an email')
+        let nome = `usuario${faker.person.firstName()}`
+        let senha = `${faker.internet.password()}`
+        inicioPage.selecionarAba('Account')
+        loginPage.acessarCriarConta()
+        cadastroPage.realizarCadastro(nome, faker.person.lastName(), faker.phone.number(), ' ', senha, senha)
+        cy.get('[data-testid="warning"] > .r-jwli3a').should('contain', 'Please enter an email')
         });
 
-    it  ('Deve dar erro ao tentar cadastrar sem senha', () => {
+    it('Deve dar erro ao tentar cadastrar sem senha', () => {
         let nome = `usuario${faker.person.firstName()}`
         let senha = `${faker.internet.password()}`
         inicioPage.selecionarAba('Account')
@@ -67,5 +67,6 @@ describe('Tela de cadastro', () => {
         cadastroPage.realizarCadastro(nome, faker.person.lastName(), faker.phone.number(), faker.internet.email(nome), senha, 'senhaErrada')
         cy.get('[data-testid="warning"] > .r-jwli3a').should('contain', 'Password and confirm password do not match')
     });
+
 });
 
