@@ -1,8 +1,8 @@
 class loginPage{
 
     realizarLogin(email, senha){
-        cy.get('[data-testid="email"]').type(email)
-        cy.get('[data-testid="password"]').type(senha)
+        cy.get('[data-testid="email"]').type(email, {log: false})
+        cy.get('[data-testid="password"]').type(senha, {log: false})
         cy.get('[data-testid="btnLogin"]').click()
     }
 

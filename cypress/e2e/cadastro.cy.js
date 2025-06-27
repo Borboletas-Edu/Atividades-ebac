@@ -8,8 +8,7 @@ import { faker } from '@faker-js/faker';
 describe('Tela de cadastro', () => {
     
     beforeEach(() => {
-        cy.setCookie('ebacStoreVersion', 'v2', { domain: 'lojaebac.ebaconline.art.br' })
-        cy.visit('/')
+        cy.visitarPagina()
     });
 
     it('Deve realizar cadastro com sucesso', () => {
