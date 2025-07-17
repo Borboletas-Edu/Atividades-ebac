@@ -4,8 +4,7 @@
   "description": "Atividade proposta de automação da Loja Ebac",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run",
-    "open": "cypress open"
+    "open": "cypress open",
     "test": "npx cypress open",
     "start": "serverest",
     "report": "npm run mergeJsonReport && npm run generateReport",
