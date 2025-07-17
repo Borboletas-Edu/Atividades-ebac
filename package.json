@@ -21,6 +21,7 @@
     "mochawesome-merge": "^5.0.0"
   },
   "devDependencies": {
-    "@faker-js/faker": "^9.8.0"
+    "@faker-js/faker": "^9.8.0",
+    "mocha": "^11.7.1"
   }
 }
