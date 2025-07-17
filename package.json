@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx cypress open",
+    "start": "serverest",
     "report": "npm run mergeJsonReport && npm run generateReport",
     "mergeJsonReport": "npx mochawesome-merge ./mochawesome-report/*.json -o ./mochawesome-report/result.json",
     "generateReport": "npx marge ./mochawesome-report/result.json -o ./mochawesome-report --reportFilename index"
