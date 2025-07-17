@@ -1,5 +1,5 @@
 const { defineConfig } = require("cypress");
-const Mochawesome = require("mochawesome");
+const mochawesome = require("mochawesome");
 require('dotenv').config()
 
 module.exports = defineConfig({
@@ -13,7 +13,7 @@ module.exports = defineConfig({
         senhaLogin: process.env.senhaLogin,
         emailLogin: process.env.emailLogin
     },
-    reporter: 'Mochawesome',
+    reporter: 'mochawesome',
     reporterOptions: {
       reportFilename: "[name]-result",
       html: false
