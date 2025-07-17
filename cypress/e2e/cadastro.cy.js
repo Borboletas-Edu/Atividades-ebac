@@ -8,14 +8,16 @@ import { faker } from '@faker-js/faker';
 describe('Tela de cadastro', () => {
     
     beforeEach(() => {
+        cy.setCookie('ebacStoreVersion', 'v2', { domain: 'lojaebac.ebaconline.art.br' })
+        cy.visit('/')
+        inicioPage.selecionarAba('Account')
+        loginPage.acessarCriarConta()
         cy.visitarPagina()
     });
 
     it('Deve realizar cadastro com sucesso', () => {
         let nome = `usuario${faker.person.firstName()}`
         let senha = `${faker.internet.password()}`
-        inicioPage.selecionarAba('Account')
-        loginPage.acessarCriarConta()
         cadastroPage.realizarCadastro(nome, faker.person.lastName(), faker.phone.number(), faker.internet.email(nome), senha, senha)
         inicioPage.selecionarAba('Account')
         cy.get('.r-14lw9ot > :nth-child(5) > .css-146c3p1').should('have.text', 'Logout')
@@ -25,8 +27,6 @@ describe('Tela de cadastro', () => {
     it('Deve dar erro ao tentar cadastrar sem nome', () => {
         let nome = `usuario${faker.person.firstName()}`
         let senha = `${faker.internet.password()}`
-        inicioPage.selecionarAba('Account')
-        loginPage.acessarCriarConta()
         cadastroPage.realizarCadastro(' ', faker.person.lastName(), faker.phone.number(), faker.internet.email(nome), senha, senha)
         cy.get('[data-testid="warning"] > .r-jwli3a').should('contain', 'Please enter firstName')
     });
@@ -34,8 +34,6 @@ describe('Tela de cadastro', () => {
     it('Deve dar erro ao tentar cadastrar sem sobrenome', () => {
         let nome = `usuario${faker.person.firstName()}`
         let senha = `${faker.internet.password()}`
-        inicioPage.selecionarAba('Account')
-        loginPage.acessarCriarConta()
         cadastroPage.realizarCadastro(nome, ' ', faker.phone.number(), faker.internet.email(nome), senha, senha)
         cy.get('[data-testid="warning"] > .r-jwli3a').should('contain', 'Please enter lastName')
     });
@@ -43,8 +41,6 @@ describe('Tela de cadastro', () => {
     it('Deve dar erro ao tentar cadastrar sem email', () => {
         let nome = `usuario${faker.person.firstName()}`
         let senha = `${faker.internet.password()}`
-        inicioPage.selecionarAba('Account')
-        loginPage.acessarCriarConta()
         cadastroPage.realizarCadastro(nome, faker.person.lastName(), faker.phone.number(), ' ', senha, senha)
         cy.get('[data-testid="warning"] > .r-jwli3a').should('contain', 'Please enter an email')
         });
@@ -52,8 +48,6 @@ describe('Tela de cadastro', () => {
     it('Deve dar erro ao tentar cadastrar sem senha', () => {
         let nome = `usuario${faker.person.firstName()}`
         let senha = `${faker.internet.password()}`
-        inicioPage.selecionarAba('Account')
-        loginPage.acessarCriarConta()
         cadastroPage.realizarCadastro(nome, faker.person.lastName(), faker.phone.number(), faker.internet.email(nome), ' ', senha)
         cy.get('[data-testid="warning"] > .r-jwli3a').should('contain', 'Please enter password')
     });
@@ -61,8 +55,6 @@ describe('Tela de cadastro', () => {
     it('Deve dar erro ao tentar cadastrar senha e confirmação de senha diferentes', () => {
         let nome = `usuario${faker.person.firstName()}`
         let senha = `${faker.internet.password()}`
-        inicioPage.selecionarAba('Account')
-        loginPage.acessarCriarConta()
         cadastroPage.realizarCadastro(nome, faker.person.lastName(), faker.phone.number(), faker.internet.email(nome), senha, 'senhaErrada')
         cy.get('[data-testid="warning"] > .r-jwli3a').should('contain', 'Password and confirm password do not match')
     });
