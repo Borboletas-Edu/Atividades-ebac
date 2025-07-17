@@ -4,14 +4,19 @@
   "description": "Atividade proposta de automação da Loja Ebac",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress open"
+    "test": "npx cypress open",
+    "report": "npm run mergeJsonReport && npm run generateReport",
+    "mergeJsonReport": "npx mochawesome-merge ./mochawesome-report/*.json -o ./mochawesome-report/result.json",
+    "generateReport": "npx marge ./mochawesome-report/result.json -o ./mochawesome-report --reportFilename index"
   },
   "author": "EduardoBorboletas",
   "license": "ISC",
   "dependencies": {
     "cypress": "^14.5.0",
     "cypress-html-reporter": "^11.0.0",
-    "dotenv": "^16.5.0"
+    "dotenv": "^16.5.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^5.0.0"
   },
   "devDependencies": {
     "@faker-js/faker": "^9.8.0"
