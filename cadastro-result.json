@@ -1,0 +1,198 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-07-09T15:59:47.539Z",
+    "end": "2025-07-09T16:00:03.756Z",
+    "duration": 16217,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f61762c7-3b6d-4750-bb4b-b717fb1623fd",
+      "title": "",
+      "fullFile": "cypress\\e2e\\cadastro.cy.js",
+      "file": "cypress\\e2e\\cadastro.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c56b97ef-95e0-4a69-9fc4-54d6bcef3793",
+          "title": "Tela de cadastro",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve realizar cadastro com sucesso",
+              "fullTitle": "Tela de cadastro Deve realizar cadastro com sucesso",
+              "timedOut": null,
+              "duration": 4171,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let nome = `usuario${_faker.faker.person.firstName()}`;\nlet senha = `${_faker.faker.internet.password()}`;\n_inicioPage.default.selecionarAba('Account');\n_loginPage.default.acessarCriarConta();\n_cadastroPage.default.realizarCadastro(nome, _faker.faker.person.lastName(), _faker.faker.phone.number(), _faker.faker.internet.email(nome), senha, senha);\n_inicioPage.default.selecionarAba('Account');\ncy.get('.r-14lw9ot > :nth-child(5) > .css-146c3p1').should('have.text', 'Logout');\ncy.get('[data-testid=\"CustomerName\"]').should('contain', nome);",
+              "err": {},
+              "uuid": "95a68fad-ecd1-4339-bd7f-08672c0a2718",
+              "parentUUID": "c56b97ef-95e0-4a69-9fc4-54d6bcef3793",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve dar erro ao tentar cadastrar sem nome",
+              "fullTitle": "Tela de cadastro Deve dar erro ao tentar cadastrar sem nome",
+              "timedOut": null,
+              "duration": 2281,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let nome = `usuario${_faker.faker.person.firstName()}`;\nlet senha = `${_faker.faker.internet.password()}`;\n_inicioPage.default.selecionarAba('Account');\n_loginPage.default.acessarCriarConta();\n_cadastroPage.default.realizarCadastro(' ', _faker.faker.person.lastName(), _faker.faker.phone.number(), _faker.faker.internet.email(nome), senha, senha);\ncy.get('[data-testid=\"warning\"] > .r-jwli3a').should('contain', 'Please enter firstName');",
+              "err": {},
+              "uuid": "fc05d316-32bd-4d3c-92af-145b96698759",
+              "parentUUID": "c56b97ef-95e0-4a69-9fc4-54d6bcef3793",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve dar erro ao tentar cadastrar sem sobrenome",
+              "fullTitle": "Tela de cadastro Deve dar erro ao tentar cadastrar sem sobrenome",
+              "timedOut": null,
+              "duration": 2515,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let nome = `usuario${_faker.faker.person.firstName()}`;\nlet senha = `${_faker.faker.internet.password()}`;\n_inicioPage.default.selecionarAba('Account');\n_loginPage.default.acessarCriarConta();\n_cadastroPage.default.realizarCadastro(nome, ' ', _faker.faker.phone.number(), _faker.faker.internet.email(nome), senha, senha);\ncy.get('[data-testid=\"warning\"] > .r-jwli3a').should('contain', 'Please enter lastName');",
+              "err": {},
+              "uuid": "ccc171a2-aed7-4b06-9e4b-9106f1f06e33",
+              "parentUUID": "c56b97ef-95e0-4a69-9fc4-54d6bcef3793",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve dar erro ao tentar cadastrar sem email",
+              "fullTitle": "Tela de cadastro Deve dar erro ao tentar cadastrar sem email",
+              "timedOut": null,
+              "duration": 2197,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let nome = `usuario${_faker.faker.person.firstName()}`;\nlet senha = `${_faker.faker.internet.password()}`;\n_inicioPage.default.selecionarAba('Account');\n_loginPage.default.acessarCriarConta();\n_cadastroPage.default.realizarCadastro(nome, _faker.faker.person.lastName(), _faker.faker.phone.number(), ' ', senha, senha);\ncy.get('[data-testid=\"warning\"] > .r-jwli3a').should('contain', 'Please enter an email');",
+              "err": {},
+              "uuid": "c5123579-b9f6-4118-b0b1-a13ca10a7391",
+              "parentUUID": "c56b97ef-95e0-4a69-9fc4-54d6bcef3793",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve dar erro ao tentar cadastrar sem senha",
+              "fullTitle": "Tela de cadastro Deve dar erro ao tentar cadastrar sem senha",
+              "timedOut": null,
+              "duration": 2429,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let nome = `usuario${_faker.faker.person.firstName()}`;\nlet senha = `${_faker.faker.internet.password()}`;\n_inicioPage.default.selecionarAba('Account');\n_loginPage.default.acessarCriarConta();\n_cadastroPage.default.realizarCadastro(nome, _faker.faker.person.lastName(), _faker.faker.phone.number(), _faker.faker.internet.email(nome), ' ', senha);\ncy.get('[data-testid=\"warning\"] > .r-jwli3a').should('contain', 'Please enter password');",
+              "err": {},
+              "uuid": "fc4fd41f-9f84-4c21-b4c2-69246841533f",
+              "parentUUID": "c56b97ef-95e0-4a69-9fc4-54d6bcef3793",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve dar erro ao tentar cadastrar senha e confirmação de senha diferentes",
+              "fullTitle": "Tela de cadastro Deve dar erro ao tentar cadastrar senha e confirmação de senha diferentes",
+              "timedOut": null,
+              "duration": 2463,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let nome = `usuario${_faker.faker.person.firstName()}`;\nlet senha = `${_faker.faker.internet.password()}`;\n_inicioPage.default.selecionarAba('Account');\n_loginPage.default.acessarCriarConta();\n_cadastroPage.default.realizarCadastro(nome, _faker.faker.person.lastName(), _faker.faker.phone.number(), _faker.faker.internet.email(nome), senha, 'senhaErrada');\ncy.get('[data-testid=\"warning\"] > .r-jwli3a').should('contain', 'Password and confirm password do not match');",
+              "err": {},
+              "uuid": "0792f4db-7400-4bf5-af65-1912b788ce5f",
+              "parentUUID": "c56b97ef-95e0-4a69-9fc4-54d6bcef3793",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "95a68fad-ecd1-4339-bd7f-08672c0a2718",
+            "fc05d316-32bd-4d3c-92af-145b96698759",
+            "ccc171a2-aed7-4b06-9e4b-9106f1f06e33",
+            "c5123579-b9f6-4118-b0b1-a13ca10a7391",
+            "fc4fd41f-9f84-4c21-b4c2-69246841533f",
+            "0792f4db-7400-4bf5-af65-1912b788ce5f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 16056,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]-result",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportFilename": "[name]-result",
+        "html": false
+      },
+      "version": "6.2.0"
+    }
+  }
+}
