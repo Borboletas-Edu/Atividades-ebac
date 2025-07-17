@@ -1,0 +1,41 @@
+{
+    "success": true,
+    "products": [
+        {
+            "_id": "67c8d1eed1c85b3c2446b775",
+            "categories": [],
+            "photos": [
+                "https://exemplo.com/camiseta.jpg"
+            ],
+            "visible": true,
+            "additionalDetails": [],
+            "name": "Camiseta EBAC - validação de resposta",
+            "price": 149.99,
+            "quantity": 0,
+            "description": "Camiseta 100% algodão",
+            "popular": true,
+            "specialPrice": 149.99,
+            "createdAt": "2025-03-05T22:36:30.798Z",
+            "updatedAt": "2025-04-09T15:26:42.370Z",
+            "__v": 0
+        },
+        {
+            "_id": "67c8d7b1f10216160c651947",
+            "categories": [],
+            "photos": [
+                "https://exemplo.com/camiseta.jpg"
+            ],
+            "visible": true,
+            "additionalDetails": [],
+            "name": "Camiseta EBAC - validação de resposta",
+            "price": 149.99,
+            "quantity": 35,
+            "description": "Camiseta 100% algodão",
+            "popular": true,
+            "specialPrice": 149.99,
+            "createdAt": "2025-03-05T23:01:05.607Z",
+            "updatedAt": "2025-06-26T14:54:48.456Z",
+            "__v": 0
+        }],
+        "totalProduct": 2
+}

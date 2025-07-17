@@ -12,6 +12,7 @@ describe('Tela de cadastro', () => {
         cy.visit('/')
         inicioPage.selecionarAba('Account')
         loginPage.acessarCriarConta()
+        cy.visitarPagina()
     });
 
     it('Deve realizar cadastro com sucesso', () => {
