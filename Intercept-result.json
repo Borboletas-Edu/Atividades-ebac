@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-07-09T15:59:44.085Z",
-    "end": "2025-07-09T15:59:45.154Z",
-    "duration": 1069,
+    "start": "2025-07-17T14:03:09.571Z",
+    "end": "2025-07-17T14:03:13.025Z",
+    "duration": 3454,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,16 +18,16 @@
   },
   "results": [
     {
-      "uuid": "724c75bf-d5c3-4d09-9d29-6f4c1683c405",
+      "uuid": "6d60891d-de76-4ee2-aee2-5be95be61e87",
       "title": "",
-      "fullFile": "cypress\\e2e\\Intercept.cy.js",
-      "file": "cypress\\e2e\\Intercept.cy.js",
+      "fullFile": "cypress/e2e/Intercept.cy.js",
+      "file": "cypress/e2e/Intercept.cy.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "41ea1ba1-1a58-4367-b7da-222807205f6c",
+          "uuid": "7950413e-c431-44ae-a06f-8123f30b595e",
           "title": "mock da API de itens populares",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "interceptando GET e o modificando",
               "fullTitle": "mock da API de itens populares interceptando GET e o modificando",
               "timedOut": null,
-              "duration": 933,
+              "duration": 3142,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.intercept('GET', '**/public/getProducts?type=popular&limit=10&skip=0', {\n  fixture: 'produtos.json'\n}).as('teste1');\ncy.get('[data-testid=\"home-popular-product-list\"] > [style=\"padding-right: 10px; padding-left: 10px;\"] > ').should('have.length', 2);",
               "err": {},
-              "uuid": "1d82e89f-b3f6-4cee-81fe-eb1b0d7f5b7f",
-              "parentUUID": "41ea1ba1-1a58-4367-b7da-222807205f6c",
+              "uuid": "a041160f-9b90-4488-b091-578e236ac8dd",
+              "parentUUID": "7950413e-c431-44ae-a06f-8123f30b595e",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "1d82e89f-b3f6-4cee-81fe-eb1b0d7f5b7f"
+            "a041160f-9b90-4488-b091-578e236ac8dd"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 933,
+          "duration": 3142,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

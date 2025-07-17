@@ -1,33 +1,33 @@
 {
   "stats": {
     "suites": 1,
-    "tests": 2,
-    "passes": 2,
+    "tests": 1,
+    "passes": 0,
     "pending": 0,
-    "failures": 0,
-    "start": "2025-07-09T16:00:04.726Z",
-    "end": "2025-07-09T16:00:10.183Z",
-    "duration": 5457,
+    "failures": 1,
+    "start": "2025-07-17T14:03:55.858Z",
+    "end": "2025-07-17T14:04:12.583Z",
+    "duration": 16725,
     "testsRegistered": 2,
-    "passPercent": 100,
+    "passPercent": 0,
     "pendingPercent": 0,
-    "other": 0,
-    "hasOther": false,
-    "skipped": 0,
-    "hasSkipped": false
+    "other": 1,
+    "hasOther": true,
+    "skipped": 1,
+    "hasSkipped": true
   },
   "results": [
     {
-      "uuid": "52ff710f-fb1a-403b-be99-72f9d02ef4eb",
+      "uuid": "e4d1abfe-3d1e-4927-bd68-4cbdbd76d1a7",
       "title": "",
-      "fullFile": "cypress\\e2e\\carrinho.cy.js",
-      "file": "cypress\\e2e\\carrinho.cy.js",
+      "fullFile": "cypress/e2e/carrinho.cy.js",
+      "file": "cypress/e2e/carrinho.cy.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "665f6220-35d8-4cf7-baf6-afb7b7d9cd14",
+          "uuid": "0658b586-2d14-482c-bd88-fc2d3071b0bc",
           "title": "Carrinho de itens",
           "fullFile": "",
           "file": "",
@@ -38,17 +38,21 @@
               "title": "Deve adicionar produtos ao carrinho com sucesso",
               "fullTitle": "Carrinho de itens Deve adicionar produtos ao carrinho com sucesso",
               "timedOut": null,
-              "duration": 2881,
-              "state": "passed",
-              "speed": "fast",
-              "pass": true,
-              "fail": false,
+              "duration": 4070,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
               "pending": false,
               "context": null,
               "code": "cy.fazerLogin(Cypress.env('emailLogin'), Cypress.env('senhaLogin'));\ncy.AdicionarCarrinho('Tênis');\ncy.get('[data-testid=\"productName\"]').should('contain', 'Tênis');",
-              "err": {},
-              "uuid": "4cfb003d-1308-45c7-b7de-39d3d21688ba",
-              "parentUUID": "665f6220-35d8-4cf7-baf6-afb7b7d9cd14",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-testid=\"remove\"]`, but never found it.\n\nBecause this error occurred during a `after each` hook we are skipping the remaining tests in the current suite: `Carrinho de itens`",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-testid=\"remove\"]`, but never found it.\n\nBecause this error occurred during a `after each` hook we are skipping the remaining tests in the current suite: `Carrinho de itens`\n    at Context.eval (webpack://atividade/./cypress/e2e/carrinho.cy.js:11:7)",
+                "diff": null
+              },
+              "uuid": "17ea7003-fcf4-4cb0-ae5d-64e3116b1644",
+              "parentUUID": "0658b586-2d14-482c-bd88-fc2d3071b0bc",
               "isHook": false,
               "skipped": false
             },
@@ -56,30 +60,31 @@
               "title": "Deve verificar se o preço dos itens é igual a soma total do carrinho",
               "fullTitle": "Carrinho de itens Deve verificar se o preço dos itens é igual a soma total do carrinho",
               "timedOut": null,
-              "duration": 2310,
-              "state": "passed",
-              "speed": "fast",
-              "pass": true,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.fazerLogin(Cypress.env('emailLogin'), Cypress.env('senhaLogin'));\ncy.AdicionarCarrinho('tênis');\ncy.get('[style=\"color: rgb(51, 144, 124); font-size: 16px; margin-right: 10px; font-family: Montserrat-SemiBold;\"]').invoke('text').then(valor => {\n  cy.get('[data-testid=\"total\"]').should('have.text', valor);\n});",
               "err": {},
-              "uuid": "2212a5ad-561d-47fb-91be-93b0cfaa2f0a",
-              "parentUUID": "665f6220-35d8-4cf7-baf6-afb7b7d9cd14",
+              "uuid": "e2393dcb-da9a-4fd9-b053-282b6e9f5214",
+              "parentUUID": "0658b586-2d14-482c-bd88-fc2d3071b0bc",
               "isHook": false,
-              "skipped": false
+              "skipped": true
             }
           ],
           "suites": [],
-          "passes": [
-            "4cfb003d-1308-45c7-b7de-39d3d21688ba",
-            "2212a5ad-561d-47fb-91be-93b0cfaa2f0a"
+          "passes": [],
+          "failures": [
+            "17ea7003-fcf4-4cb0-ae5d-64e3116b1644"
           ],
-          "failures": [],
           "pending": [],
-          "skipped": [],
-          "duration": 5191,
+          "skipped": [
+            "e2393dcb-da9a-4fd9-b053-282b6e9f5214"
+          ],
+          "duration": 4070,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
